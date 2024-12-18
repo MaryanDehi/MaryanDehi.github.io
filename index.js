@@ -41,3 +41,27 @@ window.addEventListener("scroll", () => {
     alterStyles(isBackToTopRendered);
   }
 });
+
+const carouselImages = document.querySelectorAll('.carousel__image');
+const prevButton = document.querySelector('.carousel__button--prev');
+const nextButton = document.querySelector('.carousel__button--next');
+let currentIndex = 0;
+
+function showImage(index) {
+    carouselImages.forEach((img, i) => {
+        img.classList.toggle('active', i === index);
+    });
+}
+
+prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex === 0) ? carouselImages.length - 1 : currentIndex - 1;
+    showImage(currentIndex);
+});
+
+nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % carouselImages.length;
+    showImage(currentIndex);
+});
+
+// Initialize carousel
+showImage(currentIndex);

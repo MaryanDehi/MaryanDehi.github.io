@@ -506,6 +506,96 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 /* --------------------------------------- */
+/* ----- Research Section ----- */
+/* --------------------------------------- */
+
+.research__box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6rem;
+}
+
+@media (max-width: 900px) {
+    .research__box {
+        flex-direction: column-reverse;
+        align-items: initial;
+    }
+}
+
+.research__text {
+    flex: 0 0 45%; /* Adjust width for text */
+}
+
+.research__image-box {
+    flex: 1; /* Image takes remaining space */
+    margin-left: 4rem; /* Space between text and image */
+}
+
+.research__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+@media (max-width: 900px) {
+    .research__image-box {
+        margin-left: 0;
+        margin-bottom: var(--gutter-normal);
+    }
+}
+
+/* --------------------------------------- */
+/* ----- Carousel ----- */
+/* --------------------------------------- */
+
+.research__image-carousel {
+    position: relative;
+    max-width: 500px; /* Adjust width */
+    margin: 2rem auto;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel__image {
+    min-width: 100%;
+    display: none;
+}
+
+.carousel__image.active {
+    display: block;
+}
+
+.carousel__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel__button--prev {
+    left: 1rem;
+}
+
+.carousel__button--next {
+    right: 1rem;
+}
+
+.carousel__button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* --------------------------------------- */
 /* ----- Clients ----- */
 /* --------------------------------------- */
 
